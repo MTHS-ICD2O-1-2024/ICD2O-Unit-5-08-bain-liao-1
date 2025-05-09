@@ -10,19 +10,22 @@
  * This function calculates division using repeated subtraction.
  */
 function calculateDivisionWithSubtraction() {
-  const userDividend = parseInt(document.getElementById("user-dividend").value)
-  const userDivisor = parseInt(document.getElementById("user-divisor").value)
+  // variables
+  const userDividend = parseInt(document.getElementById('user-dividend').value)
+  const userDivisor = parseInt(document.getElementById('user-divisor').value)
   let remainder = userDividend
   let counter = 0
 
+  // process
   while (true) {
+    counter++
+    remainder -= userDivisor
     if (remainder < userDivisor) {
       break
     }
-    counter ++
-    remainder -= userDivisor
   }
 
-  document.getElementById("result").innerText =
-    userDividend + " ÷ " + userDivisor + " = " + counter + " and the remainder is: " + remainder
+  // output
+  document.getElementById('result').innerText =
+    userDividend + ' ÷ ' + userDivisor + ' = ' + counter + ' and the remainder is: ' + remainder
 }
